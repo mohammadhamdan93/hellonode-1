@@ -27,8 +27,10 @@ node {
         /* Finally, we'll push the image with two tags:
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
-         * Pushing multiple tags is cheap, as all the layers are reused. */
-         docker.withRegistry('https://hub.docker.com', 'docker-hub-credentials'
+         * Pushing multiple tags is cheap, as all the layers are reused.
+         *docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'*/
+           
+           sh 'sudo docker login -u "hamdandock" -p "M.0147896325" hub.docker.com'
            
                
             app.push("${env.BUILD_NUMBER}")
