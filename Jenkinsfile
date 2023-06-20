@@ -7,11 +7,14 @@ node {
         checkout scm
     }
 
+    
+    
     stage('Build image') {
-        /* This builds the actual image; synonymous to
-         * docker build on the command line */
-
-        app = docker.build(  "upasanatestgit/hellonode")
+    /* This builds the actual image; synonymous to
+     * docker build on the command line */
+    sshCommand remote: remote, command: "docker.build(\"upasanatestgit/hellonode\")"
+}
+    
     }
 
     stage('Test image') {
