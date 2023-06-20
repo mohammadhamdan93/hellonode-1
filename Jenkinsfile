@@ -7,7 +7,7 @@ node {
         checkout scm
     }
 
-    {
+    
     
     stage('Build image') {
     /* This builds the actual image; synonymous to
@@ -15,7 +15,7 @@ node {
     sshCommand remote: remote, command: "docker.build(\"upasanatestgit/hellonode\")"
 }
     
-    }
+    
 
     stage('Test image') {
         /* Ideally, we would run a test framework against our image.
